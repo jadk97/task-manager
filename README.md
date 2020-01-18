@@ -1,1 +1,1 @@
-A small task app I made to get some more practice with Node, Express, and MongoDB.
+A REST API I made to get some more practice with Node, Express, and MongoDB.
