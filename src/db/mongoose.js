@@ -48,10 +48,13 @@ const User = mongoose.model('User', {
 
 const Task = mongoose.model('Task', {
   description: {
-    type: String
+    type: String,
+    trim: true,
+    required: true
   },
   completed: {
-    type: Boolean
+    type: Boolean,
+    default: false
   }
 });
 
@@ -61,6 +64,14 @@ const Task = mongoose.model('Task', {
 //   password: "password"
 // })
 
+// const task = new Task({
+//   description: "Wash the dishes"
+// })
+
+// task.save().then((result) => {
+//   console.log(result);
+// })
+// .catch((error) => {console.log(error)});
 // me.save().then((result) => {
 //   console.log(result);
 // })
