@@ -23,6 +23,17 @@ const User = mongoose.model('User', {
       }
     }
   },
+  password: {
+    type: String,
+    required: true,
+    minlength: 7,
+    trim: true,
+    validate(value){
+      if(value.toLowerCase().includes("password")){
+        throw new Error("Password cannot contain the word 'password' in it.")
+      }
+    }
+  },
   age: {
     type: Number,
     default: 0,
@@ -44,14 +55,15 @@ const Task = mongoose.model('Task', {
   }
 });
 
-const me = new User({
-  name: " JK   ",
-  email: "  jk@email.com   "
-})
+// const me = new User({
+//   name: " JK   ",
+//   email: "  jk@email.com   ",
+//   password: "password"
+// })
 
-me.save().then((result) => {
-  console.log(result);
-})
-.catch((error) => {
-  console.log(error);
-})
+// me.save().then((result) => {
+//   console.log(result);
+// })
+// .catch((error) => {
+//   console.log(error);
+// })
