@@ -143,7 +143,7 @@ app.patch(`/tasks/:id`, async (req, res) => {
     res.send(task);
   }
   catch(e){
-    res.status(400).send();
+    res.status(500).send();
   }
 })
 
